@@ -1,0 +1,223 @@
+main :not(#Text-Video){
+    text-align: center;
+
+}
+
+li a{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    padding:15px;
+    display: block;
+    
+    
+    
+}
+li a{
+    float: right;
+    border-right: 1px solid white;
+    
+}
+.menu{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(102, 4, 214, 0.309);
+    position: fixed;
+    top:0;
+    width: 900px;
+
+}
+
+li a:hover:not(.active){
+  background-color: #111 ;
+
+    
+}
+.active{
+    background-color: rebeccapurple;
+}
+table,th,td{
+    border: 1px solid rebeccapurple;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    width:50%;
+    padding: 5px;
+}
+table{
+    margin-top: 20px;
+}
+th{
+    background-color: rebeccapurple;
+    color: whitesmoke;
+   
+}
+
+
+img{
+    display: block;
+    margin-left: auto ;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 50px;
+}
+body{
+    width: 800px;
+    margin: auto;
+    background-image: url("bg.png");
+    
+}
+h2{
+    color: rebeccapurple;
+    margin-top: 300px;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#icon{
+    width: 100px;
+    margin-left:800px;
+    margin-top:0;
+    padding:0;
+    position: fixed;
+    
+}
+#icon:hover{
+    opacity: 0.3;
+
+}
+#Liste-Webseiten{
+  background: rebeccapurple;
+  padding: 20px;
+  list-style: none;
+  
+  
+      
+}
+#Liste-Webseiten li{
+    background:#c2c0e67c;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+}
+h3{
+ font-family: Arial, Helvetica, sans-serif;   
+
+}
+video{
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+
+}
+#Text-Video{
+    color: rebeccapurple;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 82px;
+
+}
+.Fahnen .desc{
+    padding: 15px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+.Fahnen img {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+  div.Fahnen {
+    margin: 40px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+  }
+  object{
+      margin-left: auto;
+      margin-right: auto;
+      padding: 100px;
+      height: 500px;
+  }
+  input[type = text]{
+    background-color: #cfcee643;
+    color:rebeccapurple;
+    border-color: rgba(102, 51, 153, 0.172);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    
+    
+
+  }
+  input[type=text]:focus {
+    border: 3px solid rebeccapurple(102, 51, 153, 0.2);
+  }
+   input[type=submit]  {
+    background-color: rebeccapurple;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+   }  
+   textarea{
+    background-color: #cfcee643;
+    color:rebeccapurple;
+    border-color: rgba(102, 51, 153, 0.172);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+   }
+   footer{
+       margin-top: 50px;
+       margin-bottom:20px;
+   }
+   address{
+       font-family: Arial, Helvetica, sans-serif;
+       margin-top: 100px;
+   }
+   #Option1 , #male{
+       margin-top: 20px;
+   }
+   #Maillink{
+       color:white;
+       border-color: royalblue;
+       background: rebeccapurple;
+       padding: 5px;
+       text-decoration: none;
+       margin-top: 0;
+   }
+   #Maillink:hover{
+       background: rgba(115, 84, 146, 0.59);
+   }
+   
+  
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
