@@ -15,18 +15,24 @@ li a{
     
     
 }
+#navigation-div{
+    position: sticky;
+    margin-top: 0;
+    
+}
 li a{
     float: right;
     border-right: 1px solid white;
     
 }
+
 .menu{
     list-style-type: none;
     margin:0;
     padding: 0;
     overflow: hidden;
     background-color: rgba(102, 4, 214, 0.309);
-    position: fixed;
+    position: sticky;
     top:0;
     width: 900px;
 
