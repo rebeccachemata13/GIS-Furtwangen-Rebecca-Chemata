@@ -18,7 +18,14 @@ li a{
 #navigation-div{
     position: sticky;
     margin-top: 0;
+    top:0;
     height: 2px;
+   
+}
+#icon img{
+    position: sticky;
+    top:0;
+    float:none;
 }
 li a{
     float: right;
@@ -40,6 +47,7 @@ li a{
 
 li a:hover:not(.active){
   background-color: #111 ;
+  
 
     
 }
@@ -72,7 +80,7 @@ img{
     margin-top: 50px;
 }
 body{
-    width: 800px;
+    width: 1000px;
     margin: auto;
     background-image: url("bg.png");
     
@@ -81,20 +89,32 @@ h2{
     color: rebeccapurple;
     margin-top: 300px;
 }
-p{
+p :not(.Animation p){
     font-family: Arial, Helvetica, sans-serif;
     
-}
-#icon{
-    width: 100px;
-    margin-left:800px;
-    margin-top:0;
-    padding:0;
-    position: fixed;
+    
     
 }
-#icon:hover{
+#icon img{
+    width: 60px;
+    margin-top:100px;
+    padding:0;
+    position: sticky;
+    top:0;
+    transition: width 0.5s;
+}
+#icon-div{
+    position:sticky;
+    top:0;
+    float:right;
+    height: 10px;
+    
+    
+    
+}
+#icon img:hover{
     opacity: 0.3;
+    width: 150px;
 
 }
 #Liste-Webseiten{
@@ -142,15 +162,15 @@ video{
     margin-top: 0;
   }
   div.Fahnen {
-    margin: 40px;
+    margin: 30px;
     border: 1px solid #ccc;
     float: left;
-    width: 180px;
+    width: 250px;
   }
   object{
       margin-left: auto;
       margin-right: auto;
-      padding: 100px;
+      padding: 200px;
       height: 500px;
   }
   input[type = text]{
@@ -159,13 +179,20 @@ video{
     border-color: rgba(102, 51, 153, 0.172);
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
+    transition: width 5s ease-in-out;
     
-    
-
-  }
-  input[type=text]:focus {
+}
+    input[ type=text ]:focus {
     border: 3px solid rebeccapurple(102, 51, 153, 0.2);
+    width: 50%;
+    
   }
+  input[ type=text ]:hover{
+    width: 50%;
+  }
+    
+  
+
    input[type=submit]  {
     background-color: rebeccapurple;
     border: none;
@@ -206,16 +233,156 @@ video{
    #Maillink:hover{
        background: rgba(115, 84, 146, 0.59);
    }
+ .Animiert{
+       animation-name: move-box ;
+       animation-duration: 4s;
+       animation-iteration-count: 50;
+       position: relative;
+       width: 200px;
+       margin-left: auto;
+       margin-right:auto;
+       
+       
+
+   }
+   .Animiert p{
+       padding: 5px;
+       font-family: Arial, Helvetica, sans-serif;
+       font-size: x-large;
+       color: white;
+   }
+
+   main p:first-of-type{
+       font-size: x-large;
+       font-family: Arial, Helvetica, sans-serif;
+   }
+   main > h3{
+       color: darkblue;
+       font-size: xx-large;
+
+   }
+   .text~p{
+    font-size: x-large;
+}
+table~p{
+    font-size: x-large;
+}
+
+   @keyframes move-box {
+    0%   {background-color:rebeccapurple; left:0px; top:0px;}
+    25%  {background-color:rgb(202, 30, 111); left:50px; top:0px;}
+    50%  {background-color:rgb(9, 9, 75); left:50px; top:50px;}
+    75%  {background-color:lightblue; left:0px; top:50px;}
+    100% {background-color:rebeccapurple; left:0px; top:0px;}
+  }
+   
+
    @media screen and (max-width:700px) {
     body{
-        width: 700px;
+        width: 600px;
+        
     }  
     li a{
         float:none;
         text-align:left;
+        color:rebeccapurple;
+         
     } 
+    .active{
+        color:white;
+    }
+    
+    #navigation-div{
+        width: 150px;
+        font-size: x-large;
        
-   }
+        
+    }
+    #icon img{
+       width: 50px;
+       margin-top: 2px;
+    }
+    div.Fahnen{
+        margin: 5px;
+        width:185px
+    }
+    object{
+        padding:0;
+        
+    }
+    #icon-div{
+        width: 50%;
+        margin-left:0;
+
+        display:flex;
+        flex-direction: row-reverse;
+    }
+    
+    
+   
+}
+@media screen and (max-width: 400px) {
+    body{
+        width:100%;
+        
+    }
+    #navigation-div{
+        width: 180px;
+        font-size: 100%;
+        
+    }
+    video{
+    width: 390px;
+    }
+    img{
+    width: 100%;
+    }
+    div.Fahnen{
+    width:100%;
+     }
+
+     input[type = text]{
+         width:100%;
+         padding:5%;
+     }
+     textarea{
+        padding: 30px;
+        width: 100%;
+ }
+ table{
+     width: 100%;
+     margin: 0;
+ }
+ object{
+     width: 100%;
+ }
+ main > img{
+     margin-top: 145px;
+     
+ }
+ .menu{
+     background: rgba(255, 255, 255, 0.844);
+
+ }
+ header > img {
+     margin-top:145px;
+ }
+ address{
+     margin-top:145px;
+
+ }
+ table *{
+     
+     padding: 20px;
+ }
+ p{
+     text-align: justify;
+ }
+
+
+
+}
+
   
 
     
