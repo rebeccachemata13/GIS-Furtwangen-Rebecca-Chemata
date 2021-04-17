@@ -414,7 +414,8 @@ table~p{
  }
  .flex p{
  color: #111; 
- font-size: x-large;   
+ font-size: x-large;
+ width:100%;   
  }
 
  
