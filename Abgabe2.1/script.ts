@@ -219,7 +219,7 @@ namespace Abgabe2_1 {
 
     //b)
     function fizzBuzz(): void {
-        for (let i: number = 1; i < 100; i++) {
+        for (let i: number = 1; i <= 100; i++) {
             if (i % 5 == 0 && i % 3 == 0) {
                 console.log("FizzBuzz");
             } else if (i % 5 == 0) {
