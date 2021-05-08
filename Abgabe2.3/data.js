@@ -11,7 +11,7 @@ var Abgabe2_3;
         },
         {
             imageId: "brötchen2",
-            imageUrl: "_knusprig_sesam_brötchen.jpg",
+            imageUrl: "knusper_sesam.jpg",
             mitSesam: true,
             knusprig: true,
             preis: 0.50
