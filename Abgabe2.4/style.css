@@ -1,0 +1,119 @@
+body:not(header > div) {
+
+margin-left: auto;
+margin-right: auto;  
+text-align: center; 
+background-image: url("holz_.jpg");
+height:100%;
+width: 100%;
+
+background-position: center;
+background-repeat:no-repeat;
+background-size: cover;
+border-radius: 0px;
+
+}
+#image-container{
+display: flex;
+flex-direction: row;
+justify-content:space-between;
+padding:20px;
+border-radius: 100px;
+border-width: 2px;
+background-color: none;
+
+  }
+
+
+.logo{
+    border-radius: 0px;
+}
+
+main > img{
+    width: 600px;
+}
+#burgerGif{
+width: 210px;
+align-self: auto;
+}
+
+#header-div{
+margin-left:0;
+display: flex;
+flex-direction: row;
+justify-content:space-between;    
+background-color: rgba(228, 93, 93, 0.844) ;
+padding:20px;
+border-radius: 100px;
+border-width: 2px;
+}
+
+#header-div img:last-of-type{
+    width: 210px;
+}
+img {
+    border-radius: 100px;
+}
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(240, 212, 102, 0.933);
+    font-size: 30px;
+    border-radius: 100px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    color: black;
+    border: 2px solid orange;
+    
+    
+    padding:10px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+
+    
+
+
+}
+main h2:last-of-type{
+    margin-left: 20%;
+    margin-right: 20%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+a {
+    background-color: green;
+    color:white;
+    border: 2px solid green;
+    border-radius: 100px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 200px;
+    transition: width 0.5s;
+    font-size:x-large;
+  }
+  
+  a:hover, a:active {
+    background-color: brown;
+    border:2px solid rgba(228, 93, 93, 0.844);
+    color: white;
+    width: 300px;
+  }
+  #image-container img{
+  padding: 20px;
+  transition: width 0.5s;
+  }
+  #image-container img:hover{
+    opacity: 0.5;
+    width: 350px;
+       
+  }
+  
+
+ 
+
