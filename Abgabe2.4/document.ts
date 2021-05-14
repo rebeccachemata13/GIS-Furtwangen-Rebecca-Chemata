@@ -2,132 +2,109 @@ namespace Abgabe2_4 {
 
     let myHamburger: HamburgerOptionen = convertToObject();
 
-    function displayOberseite(): void {
-        for (let i: number = 0; i < myHamburger.brotOberseiten.length; i++) {
+    function display(_arrayList: BurgerTeil[]): void {
+        for (let i: number = 0; i < _arrayList.length; i++) {
             let imageContainer: HTMLDivElement = <HTMLDivElement>document.getElementById("image-container");
 
             let image: HTMLImageElement = document.createElement("img");
-            image.setAttribute("src", myHamburger.brotOberseiten[i].imageUrl);
-            image.setAttribute("id", myHamburger.brotOberseiten[i].imageId);
-            image.addEventListener("click", onClickOberseite);
+            image.setAttribute("src", _arrayList[i].imageUrl);
+            image.setAttribute("id", _arrayList[i].imageId);
+            image.addEventListener("click", onClick);
             image.setAttribute("width", "400px");
-            image.classList.add("BrotOberseite");
-
+            image.classList.add("images");
             imageContainer.appendChild(image);
         }
     }
-    displayOberseite();
-    function displaySalate(): void {
-        for (let i: number = 0; i < myHamburger.salate.length; i++) {
-            let imageContainer: HTMLDivElement = <HTMLDivElement>document.getElementById("image-container2");
-
-            let image: HTMLImageElement = document.createElement("img");
-            image.setAttribute("src", myHamburger.brotOberseiten[i].imageUrl);
-            image.setAttribute("id", myHamburger.brotOberseiten[i].imageId);
-            image.addEventListener("click", onClickSalate);
-            image.setAttribute("width", "400px");
-            image.classList.add("Salate");
-
-            imageContainer.appendChild(image);
-        }
+    if (document.querySelector("title").getAttribute("id") == "First") {
+        display(myHamburger.brotOberseiten);
     }
-    displaySalate();
-    function displayFleisch(): void {
-        for (let i: number = 0; i < myHamburger.brotOberseiten.length; i++) {
-            let imageContainer: HTMLDivElement = <HTMLDivElement>document.getElementById("image-container3");
 
-            let image: HTMLImageElement = document.createElement("img");
-            image.setAttribute("src", myHamburger.brotOberseiten[i].imageUrl);
-            image.setAttribute("id", myHamburger.brotOberseiten[i].imageId);
-            image.addEventListener("click", onClickFleisch);
-            image.setAttribute("width", "400px");
-            image.classList.add("Fleisch");
-
-            imageContainer.appendChild(image);
-        }
+    else if (document.querySelector("title").getAttribute("id") == "Second") {
+        display(myHamburger.salate);
     }
-    displayFleisch();
-    function displayUnterseite(): void {
-        for (let i: number = 0; i < myHamburger.brotOberseiten.length; i++) {
-            let imageContainer: HTMLDivElement = <HTMLDivElement>document.getElementById("image-container4");
 
-            let image: HTMLImageElement = document.createElement("img");
-            image.setAttribute("src", myHamburger.brotOberseiten[i].imageUrl);
-            image.setAttribute("id", myHamburger.brotOberseiten[i].imageId);
-            image.addEventListener("click", onClickUnterseite);
-            image.setAttribute("width", "400px");
-            image.classList.add("BrotUnterseite");
-
-            imageContainer.appendChild(image);
-        }
+    else if (document.querySelector("title").getAttribute("id") == "Third") {
+        display(myHamburger.fleischMöglichkeiten);
     }
-    displayUnterseite();
+
+    else if (document.querySelector("title").getAttribute("id") == "Fourth") {
+        display(myHamburger.unterBrotseiten);
+    }
 
 
-
-    function onClickOberseite(_event: MouseEvent): void {
-
+    function onClick(_event: Event): void {
         let target: HTMLElement = <HTMLElement>_event.target;
-        for (let i: number = 0; i < myHamburger.brotOberseiten.length; i++) {
-            if (target.id == myHamburger.brotOberseiten[i].imageId) {
-                console.log(myHamburger.brotOberseiten[i].imageId);
-                console.log("Knusprig: " + myHamburger.brotOberseiten[i].knusprig);
-                console.log("Mit Sesam: " + myHamburger.brotOberseiten[i].mitSesam);
-                console.log("Preis: " + myHamburger.brotOberseiten[i].preis + " Euro");
+        target.style.border = "2px solid black";
 
-
-            }
+        if (document.querySelector("title").getAttribute("id") == "First") {
+            sessionStorage.setItem("image1", target.getAttribute("src"));
+            console.log(target);
+            
+        }
+        else if (document.querySelector("title").getAttribute("id") == "Second") {
+            sessionStorage.setItem("image2", target.getAttribute("src"));
+            console.log(target);
+        }
+        else if (document.querySelector("title").getAttribute("id") == "Third") {
+            sessionStorage.setItem("image3", target.getAttribute("src"));
+            console.log(target);
+        }
+        else if (document.querySelector("title").getAttribute("id") == "Fourth") {
+            sessionStorage.setItem("image4", target.getAttribute("src"));
+            console.log(target);
         }
     }
 
-    function onClickSalate(_event: MouseEvent): void {
+    function displayMeineAusgabe(): void {
 
-        let target: HTMLElement = <HTMLElement>_event.target;
-        for (let i: number = 0; i < myHamburger.salate.length; i++) {
-            if (target.id == myHamburger.salate[i].imageId) {
-                console.log(myHamburger.salate[i].imageId);
-                console.log("Mit Tomaten: " + myHamburger.salate[i].mitTomaten);
-                console.log("Mit Zwiebeln: " + myHamburger.salate[i].mitZwiebeln);
-                console.log("Preis: " + myHamburger.salate[i].preis + " Euro");
+        let meineAusgabe: HTMLDivElement = <HTMLDivElement>document.getElementById("ausgabe-div");
+        let image1: HTMLImageElement = document.createElement("img");
+        let image2: HTMLImageElement = document.createElement("img");
+        let image3: HTMLImageElement = document.createElement("img");
+        let image4: HTMLImageElement = document.createElement("img");
 
-            }
+
+        if (document.querySelector("title").getAttribute("id") == "Second") {
+            image1.setAttribute("src", sessionStorage.getItem("image1"));
+            meineAusgabe.appendChild(image1);
+        }
+        else if (document.querySelector("title").getAttribute("id") == "Third") {
+            image1.setAttribute("src", sessionStorage.getItem("image1"));
+            image2.setAttribute("src", sessionStorage.getItem("image2"));
+            meineAusgabe.appendChild(image1);
+            meineAusgabe.appendChild(image2);
+
+
+        }
+        else if (document.querySelector("title").getAttribute("id") == "Fourth") {
+            image1.setAttribute("src", sessionStorage.getItem("image1"));
+            image2.setAttribute("src", sessionStorage.getItem("image2"));
+            image3.setAttribute("src", sessionStorage.getItem("image3"));
+            meineAusgabe.appendChild(image1);
+            meineAusgabe.appendChild(image2);
+            meineAusgabe.appendChild(image3);
+        }
+        else if (document.querySelector("title").getAttribute("id") == "fifth") {
+            let meinErgebnis: HTMLDivElement = <HTMLDivElement>document.getElementById("mein-Ergebnis");
+            image1.setAttribute("src", sessionStorage.getItem("image1"));
+            image2.setAttribute("src", sessionStorage.getItem("image2"));
+            image3.setAttribute("src", sessionStorage.getItem("image3"));
+            image4.setAttribute("src", sessionStorage.getItem("image4"));
+
+            meinErgebnis.appendChild(image1);
+            meinErgebnis.appendChild(image2);
+            meinErgebnis.appendChild(image3);
+            meinErgebnis.appendChild(image4);
         }
     }
-
-    function onClickFleisch(_event: MouseEvent): void {
-
-        let target: HTMLElement = <HTMLElement>_event.target;
-        for (let i: number = 0; i < myHamburger.fleischMöglichkeiten.length; i++) {
-            if (target.id == myHamburger.fleischMöglichkeiten[i].imageId) {
-                console.log(myHamburger.fleischMöglichkeiten[i].imageId);
-                console.log("Vegetarisch: " + myHamburger.fleischMöglichkeiten[i].vegetarisch);
-                console.log("Mit Sesam: " + myHamburger.fleischMöglichkeiten[i].Fleischart);
-                console.log("Preis: " + myHamburger.fleischMöglichkeiten[i].preis + " Euro");
-
-            }
-        }
-    }
-
-    function onClickUnterseite(_event: MouseEvent): void {
-
-        let target: HTMLElement = <HTMLElement>_event.target;
-        for (let i: number = 0; i < myHamburger.unterBrotseiten.length; i++) {
-            if (target.id == myHamburger.unterBrotseiten [i].imageId) {
-                console.log(myHamburger.unterBrotseiten[i].imageId);
-                console.log("Knusprig: " + myHamburger.unterBrotseiten[i].knusprig);
-                console.log("Mit Sesam: " + myHamburger.unterBrotseiten[i].mitSesam);
-                console.log("Preis: " + myHamburger.unterBrotseiten[i].preis + " Euro");
-
-            }
-        }
-    }
-
-
+    displayMeineAusgabe();
+    
     function convertToObject(): HamburgerOptionen {
         let myHamburger: HamburgerOptionen = JSON.parse(burgerJSON);
         return myHamburger;
     }
 
 }
+
 
 

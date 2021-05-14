@@ -13,7 +13,7 @@ background-size: cover;
 border-radius: 0px;
 
 }
-#image-container{
+.container{
 display: flex;
 flex-direction: row;
 justify-content:space-between;
@@ -22,7 +22,7 @@ border-radius: 100px;
 border-width: 2px;
 background-color: none;
 
-  }
+}
 
 
 .logo{
@@ -104,14 +104,33 @@ a {
     color: white;
     width: 300px;
   }
-  #image-container img{
+  .container img{
   padding: 20px;
   transition: width 0.5s;
   }
-  #image-container img:hover{
+  .container img:hover{
     opacity: 0.5;
     width: 350px;
        
+  }
+  .meine-ausgabe {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    padding:20px;
+    border-radius: 100px;
+    border-width: 2px;
+    background-color: none;
+
+  }
+  .meine-ausgabe img {
+    padding: 20px;
+    width: 300px;   
+  }
+  #mein-Ergebnis {
+      display: block;
+      
+      
   }
   
 

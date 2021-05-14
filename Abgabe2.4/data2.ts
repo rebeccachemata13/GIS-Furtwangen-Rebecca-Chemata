@@ -1,149 +1,153 @@
 namespace Abgabe2_4 {
-    /*export let brotOberseiten: OberseiteBrot[] = [
+    /*export let brotOberseiten: BurgerTeil[] = [
 
-       {
-           imageId: "brötchen1",
-           imageUrl: "brötchen_ohne_sesam.jpg",
-           mitSesam: false,
-           knusprig: false,
-           preis: 0.10
-       },
-       {
-           imageId: "brötchen2",
-           imageUrl: "knusper_sesam.jpg",
-           mitSesam: true,
-           knusprig: true,
-           preis: 0.50
-       },
-       {
-           imageId: "brötchen3",
-           imageUrl: "Sesambrötchen.jpg",
-           mitSesam: true,
-           knusprig: false,
-           preis: 0.25
+        {
+            imageId: "brötchen1",
+            imageUrl: "brötchen_ohne_sesam.jpg",
+            option1: false,
+            option2: false,
+            preis: 0.10
+        },
+        {
+            imageId: "brötchen2",
+            imageUrl: "knusper_sesam.jpg",
+            option1: true,
+            option2: true,
+            preis: 0.50
+        },
+        {
+            imageId: "brötchen3",
+            imageUrl: "Sesambrötchen.jpg",
+            option1: true,
+            option2: false,
+            preis: 0.25
 
-       }];
+        }];
 
-   export let unterBrotseiten: UnterseiteBrot[] = [
-       {
-           imageId: "?",
-           imageUrl: "?",
-           mitSesam: true,
-           knusprig: false,
-           preis: 0.50
-       },
-       {
-           imageId: "?",
-           imageUrl: "?",
-           mitSesam: false,
-           knusprig: true,
-           preis: 0.25
-       },
-       {
-           imageId: "?",
-           imageUrl: "?",
-           mitSesam: false,
-           knusprig: false,
-           preis: 0.10
+    export let unterBrotseiten: BurgerTeil[] = [
+        {
+            imageId: "?",
+            imageUrl: "?",
+            option1: true,
+            option2: false,
+            preis: 0.50
+        },
+        {
+            imageId: "?",
+            imageUrl: "?",
+            option1: false,
+            option2: true,
 
-       }];
+            preis: 0.25
+        },
+        {
+            imageId: "?",
+            imageUrl: "?",
+            option1: false,
+            option2: false,
+            preis: 0.10
 
-   export let salate: Salat[] = [
-       {
-           imageId: "?",
-           imageUrl: "?",
-           mitTomaten: true,
-           preis: 0.50,
-           mitZwiebeln: true
+        }];
 
-       },
-       {
-           imageId: "?",
-           imageUrl: "?",
-           mitTomaten: false,
-           preis: 0.10,
-           mitZwiebeln: false
+    export let salate: BurgerTeil[] = [
+        {
+            imageId: "?",
+            imageUrl: "?",
+            option1: true,
+            option2: true,
+            preis: 0.50
 
-       },
-       {
-           imageId: "?",
-           imageUrl: "?",
-           mitTomaten: false,
-           preis: 0.40,
-           mitZwiebeln: true
+        },
+        {
+            imageId: "?",
+            imageUrl: "?",
+            option1: false,
+            option2:  false,
+            preis: 0.10
 
-       }];
+        },
+        {
+            imageId: "?",
+            imageUrl: "?",
+            option1: false,
+            option2:  true,
+            preis: 0.40
 
-   export let fleischMöglichkeiten: Fleisch[] = [
-       {
-           imageId: "?",
-           imageUrl: "?",
-           vegetarisch: true,
-           Fleischart: "Vegi",
-           preis: 2.10
-       },
-       {
-           imageId: "?",
-           imageUrl: "?",
-           vegetarisch: false,
-           Fleischart: "Rind",
-           preis: 2.10
-       },
-       {
-           imageId: "?",
-           imageUrl: "?",
-           vegetarisch: false,
-           Fleischart: "Schwein",
-           preis: 2.10
-       }];
-       */
+        }];
+        
+
+    export let fleischMöglichkeiten: BurgerTeil[] = [
+        {
+            imageId: "?",
+            imageUrl: "?",
+            vegetarisch: true,
+            Fleischart: "Vegi",
+            preis: 2.10
+        },
+        {
+            imageId: "?",
+            imageUrl: "?",
+            vegetarisch: false,
+            Fleischart: "Rind",
+            preis: 2.10
+        },
+        {
+            imageId: "?",
+            imageUrl: "?",
+            vegetarisch: false,
+            Fleischart: "Schwein",
+            preis: 2.10
+        }];
+
+        */
+
 
     export let burgerJSON: string =
-`
+        `
     {
-       "brotOberseiten": [
+       "brotOberseiten":  [{
         "imageId": "brötchen1",
         "imageUrl": "brötchen_ohne_sesam.jpg",
-        "mitSesam": "false",
-        "knusprig": "false",
-        "preis": "0.10" 
+        "option1": "false",
+        "option1": "false",
+        "preis": 0.10 
     },
     {
         "imageId": "brötchen2",
         "imageUrl": "knusper_sesam.jpg",
-        "mitSesam": "true",
-        "knusprig": "true",
-        "preis": "0.50"
+        "option1": "true",
+        "option1": "true",
+        "preis": 0.50
     },
     {
         "imageId": "brötchen3",
         "imageUrl": "Sesambrötchen.jpg",
-        "mitSesam": "true",
-        "knusprig": "false",
-        "preis": "0.25"
+        "option1": "true",
+        "option1": "false",
+        "preis": 0.25
     }
 ],
-"unterBrotseiten: [
+"unterBrotseiten": [
     {
         "imageId": "brötchen-u-1",
         "imageUrl": "brötchen_ohne_sesam.jpg",
-        "mitSesam": "true",
-        "knusprig": "false",
-        "preis": "0.50"
+        "option1": "true",
+        "option1": "false",
+        "preis": 0.50
     },
     {
         "imageId": "brötchen-u-2",
         "imageUrl": "knusper_sesam.jpg",
-        "mitSesam": "false",
-        "knusprig": "true",
-        "preis": "0.25"
+        "option1": "false",
+        "option1": "true",
+        "preis": 0.25
     },
     {
         "imageId": "brötchen-u-3",
         "imageUrl": "Sesambrötchen.jpg",
-        "mitSesam": "false",
-        "knusprig": "false",
-         "preis": "0.10"
+         "option1": "false",
+         "option1": "false",
+         "preis": 0.10
 
     }
 ],
@@ -151,23 +155,23 @@ namespace Abgabe2_4 {
     {
         "imageId": "salat1",
         "imageUrl": "tomaten_und_zwiebeln.jpg",
-        "mitTomaten": "true",
-        "preis": "0.50",
-        "mitZwiebeln": "true"
+        "option1":"true",
+        "option1": "true",
+        "preis": 0.50
     },
     {
         "imageId": "salat2",
         "imageUrl": "salatkopf.jpg",
-        "mitTomaten": "false",
-        "preis": "0.10",
-        "mitZwiebeln": "false"
+        "option1":"false",
+        "option1": "false",
+        "preis": 0.10
     },
     {
         "imageId": "salat3",
         "imageUrl": "zwiebeln.jpg",
-        "mitTomaten": "false",
-        "preis": "0.40",
-        "mitZwiebeln": "true"
+        "option1":"false",
+        "option1": "true",
+        "preis": 0.40
      
     }
 ],
@@ -175,37 +179,25 @@ namespace Abgabe2_4 {
     {
         "imageId": "fleisch1",
         "imageUrl": "veggie.jpg",
-        "vegetarisch": "true",
-        "Fleischart": "Vegi",
-        "preis": "2.10"
+        "option1": "true",
+        "option1": "Vegi",
+        "preis": 2.10
     },
     {
         "imageId": "fleisch2",
         "imageUrl": "rindfleisch.jpg",
-        "vegetarisch": "false",
-        "Fleischart": "Rind",
-        "preis": "2.10"
+        "option1": "false",
+        "option1": "Rind",
+        "preis": 2.10
     },
     {
         "imageId": "fleisch3",
         "imageUrl": "schweinefleisch.jpg",
-        "vegetarisch": "false",
-        "Fleischart": "Schwein",
-        "preis": "2.10"
+        "option1": "false",
+        "option1": "Schwein",
+        "preis": 2.10
     }
   ]
 }
 `;
-
-
-
-
-
-
-
-
-
-
-
-
 }
