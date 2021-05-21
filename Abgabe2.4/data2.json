@@ -1,0 +1,76 @@
+{
+    "brotOberseiten": [
+        {
+            "imageId": "brötchen1",
+            "imageUrl": "brötchen_ohne_sesam.jpg",
+            "option1": "false",
+            "option2": "false",
+            "preis": 0.10
+        },
+        {
+            "imageId": "brötchen2",
+            "imageUrl": "knusper_sesam.jpg",
+            "option1": "true",
+            "option2": "true",
+            "preis": 0.50
+        },
+        {
+            "imageId": "brötchen3",
+            "imageUrl": "Sesambrötchen.jpg",
+            "option1": "true",
+            "option2": "false",
+            "preis": 0.25
+        }
+    ],
+    "unterBrotseiten": [
+        {
+            "imageId": "brötchen-u-1",
+            "imageUrl": "brötchen_ohne_sesam.jpg",
+            "preis": 0.50
+        },
+        {
+            "imageId": "brötchen-u-2",
+            "imageUrl": "knusper_sesam.jpg",
+            "preis": 0.25
+        },
+        {
+            "imageId": "brötchen-u-3",
+            "imageUrl": "Sesambrötchen.jpg",
+            "preis": 0.10
+        }
+    ],
+    "salate": [
+        {
+            "imageId": "salat1",
+            "imageUrl": "tomaten_und_zwiebeln.jpg",
+            "preis": 0.50
+        },
+        {
+            "imageId": "salat2",
+            "imageUrl": "salatkopf.jpg",
+            "preis": 0.10
+        },
+        {
+            "imageId": "salat3",
+            "imageUrl": "zwiebeln.jpg",
+            "preis": 0.40
+        }
+    ],
+    "fleischMöglichkeiten": [
+        {
+            "imageId": "fleisch1",
+            "imageUrl": "veggie.jpg",
+            "preis": 2.10
+        },
+        {
+            "imageId": "fleisch2",
+            "imageUrl": "rindfleisch.jpg",
+            "preis": 2.10
+        },
+        {
+            "imageId": "fleisch3",
+            "imageUrl": "schweinefleisch.jpg",
+            "preis": 2.10
+        }
+    ]
+}

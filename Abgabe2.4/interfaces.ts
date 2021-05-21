@@ -18,4 +18,8 @@ namespace Abgabe2_4 {
     
     
     }
+    export interface KonsoleMessage {
+        error: string;
+        message: string;
+    }
 }
