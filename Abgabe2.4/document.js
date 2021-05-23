@@ -9,7 +9,7 @@ var Abgabe2_4;
         return myBurger;
     }
     async function inicial() {
-        let myHamburger = await loadJSON("https://github.com/rebeccachemata13/GIS-SoSe-2021/blob/main/Abgabe2.4/data2.json");
+        let myHamburger = await loadJSON("https://rebeccachemata13.github.io/GIS-SoSe-2021/Abgabe2.4/data2.json");
         if (document.querySelector("title").getAttribute("id") == "First") {
             display(myHamburger.brotOberseiten);
         }
