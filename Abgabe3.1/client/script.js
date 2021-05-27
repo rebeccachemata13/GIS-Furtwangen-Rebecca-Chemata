@@ -1,7 +1,7 @@
 "use strict";
 var P_3_1Server;
 (function (P_3_1Server) {
-    async function sendData(_url) {
+    async function sendData() {
         let formData = new FormData(document.forms[0]);
         console.log(": " + formData.get("name"));
         for (let entry of formData) {
@@ -10,11 +10,16 @@ var P_3_1Server;
             console.log("value: " + entry[1]);
         }
         let query = new URLSearchParams(formData);
+        let _url = "https://gis-sose-21.herokuapp.com/";
         _url = _url + "?" + query.toString();
         console.log(_url);
         let response = await fetch(_url);
-        console.log(response);
+        let antwort = await response.text();
+        console.log(antwort);
+        let para = document.createElement("p");
+        para.innerText = antwort;
+        document.body.appendChild(para);
     }
-    sendData("http://127.0.0.1:5500/Abgabe3.1/server/server.js");
+    document.querySelector("#abschick-knopf").addEventListener("click", sendData);
 })(P_3_1Server || (P_3_1Server = {}));
 //# sourceMappingURL=script.js.map

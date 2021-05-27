@@ -1,6 +1,8 @@
+
+
 namespace P_3_1Server {
 
-    async function sendData(_url: RequestInfo): Promise<void> {
+    async function sendData(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         console.log(": " + formData.get("name"));
         for (let entry of formData) {
@@ -10,11 +12,20 @@ namespace P_3_1Server {
         }
         
         let query: URLSearchParams = new URLSearchParams(<any>formData);
+        let _url: RequestInfo = "https://gis-sose-21.herokuapp.com/";                                    
         _url = _url + "?" + query.toString();
         console.log(_url);
         let response: Response = await fetch(_url);
-        console.log(response);
+        let antwort: string = await response.text();
+        console.log(antwort);
+        let para: HTMLParagraphElement = document.createElement("p");
+        para.innerText = antwort;
+        document.body.appendChild(para);
+        
+        
 
     }
-    sendData("http://127.0.0.1:5500/Abgabe3.1/server/server.js");
+    
+    document.querySelector("#abschick-knopf").addEventListener("click", sendData);
+    
 }
