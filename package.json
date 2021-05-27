@@ -1,0 +1,23 @@
+{
+  "name": "gis-sose-2021",
+  "version": "0.0.1",
+  "description": "Hello people :)",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^15.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Abgabe3.1/server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebeccachemata13/GIS-SoSe-2021.git"
+  },
+  "author": "Rebecca Chemata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebeccachemata13/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/rebeccachemata13/GIS-SoSe-2021#readme"
+}
