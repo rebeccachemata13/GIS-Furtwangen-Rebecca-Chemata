@@ -17,7 +17,7 @@ var P_3_1Server;
         let antwort = await response.text();
         console.log(antwort);
         let para = document.createElement("p");
-        para.innerText = antwort;
+        para.innerText = _url;
         document.body.appendChild(para);
     }
     document.querySelector("#abschick-knopf").addEventListener("click", sendData);

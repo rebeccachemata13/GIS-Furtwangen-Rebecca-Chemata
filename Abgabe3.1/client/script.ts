@@ -19,7 +19,7 @@ namespace P_3_1Server {
         let antwort: string = await response.text();
         console.log(antwort);
         let para: HTMLParagraphElement = document.createElement("p");
-        para.innerText = antwort;
+        para.innerText = _url;
         document.body.appendChild(para);
         
         
