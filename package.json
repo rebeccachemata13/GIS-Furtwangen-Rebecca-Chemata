@@ -4,11 +4,13 @@
   "description": "Hello people :)",
   "main": "index.js",
   "dependencies": {
-    "@types/node": "^15.6.1"
+    "url-parse": "^1.5.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^15.6.2"
+  },
   "scripts": {
-    "start": "node Abgabe3.1/server/server.js"
+    "start": "node Abgabe3.2/server/server.js"
   },
   "repository": {
     "type": "git",
