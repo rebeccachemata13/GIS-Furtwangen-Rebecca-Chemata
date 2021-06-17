@@ -4,13 +4,15 @@
   "description": "Hello people :)",
   "main": "index.js",
   "dependencies": {
+    "@types/mongodb": "^3.6.18",
+    "mongodb": "^3.6.9",
     "url-parse": "^1.5.1"
   },
   "devDependencies": {
     "@types/node": "^15.6.2"
   },
   "scripts": {
-    "start": "node Abgabe3.2/server/server.js"
+    "start": "node Abgabe3.4/server/server.js"
   },
   "repository": {
     "type": "git",
