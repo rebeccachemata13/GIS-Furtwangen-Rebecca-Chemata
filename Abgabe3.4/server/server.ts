@@ -9,8 +9,8 @@ import * as Mongo from "mongodb";
 
 export namespace P_3_4 {
 
-    //let _url: string = "mongodb+srv://rebecca_chemata:<password>@rebeccachemata.tjtcc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-    let _url: string = "mongodb://localhost:27017";
+    let _url: string = "mongodb+srv://rebecca:re12345@rebeccachemata.tjtcc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+   
 
     interface ServerAntwort {
         fname: string;
@@ -33,7 +33,7 @@ export namespace P_3_4 {
     function handleListen(): void {
         console.log("Listening"); // Listening wird in der Konsole ausgegeben
     }
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("I hear voices!"); //I hear voices wird im Terminal ausgegeben
         _response.setHeader("content-type", "text/html; charset=utf-8"); //Die Eigenschaften des Headers werden festgelegt mit setHeader
         _response.setHeader("Access-Control-Allow-Origin", "*"); //Zugangsberechtigung wird festgelegt, wer hat Zugriff?
@@ -56,22 +56,13 @@ export namespace P_3_4 {
                 console.log("Database connected");
                 sendData(benutzerBeispiel);
 
-                _response.write(benutzerBeispiel);
-                console.log(benutzerBeispiel);
-
+                _response.write(JSON.stringify(benutzerBeispiel));
+               
 
             } else if (pathname == "/paste") {
-
-                _response.write(JSON.stringify(pasteData()));
+                _response.write(JSON.stringify( await pasteData()));
 
             }
-
-            /*else if (pathname == "/delete") {
-                connectToDatabase(_url);
-                benutzer
-                benutzer.deleteOne()
-            }
-            */
         }
         _response.end(); //Die Response wird beendet
     }
