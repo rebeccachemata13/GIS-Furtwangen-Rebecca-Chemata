@@ -13,7 +13,10 @@ var P_3_4Server;
         let antwort = await response.json();
         console.log(antwort);
         let para = document.createElement("p");
-        para.innerHTML = JSON.stringify(antwort);
+        let antwortString = JSON.stringify(antwort);
+        //para.innerHTML = "Vorname: " + antwort.fname + " , " + " Nachname: " + antwort.lname + " , " + " Adresse: " + antwort.adress + " , " + " Mail: " + antwort.mail; 
+        //BITTE LESEN : Ich habe versucht die Informationen aus dem JSON String herauszubekommen aber es zeigt mir bei den Atributen immer UNDEFINED aus. Wo liegt der Fehler???? In der Konsole werden meine Daten aber angezeigt??
+        para.innerHTML = antwortString;
         document.body.appendChild(para);
     }
     async function send() {

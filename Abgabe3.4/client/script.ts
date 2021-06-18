@@ -22,11 +22,13 @@ namespace P_3_4Server {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         _url = _url + "?" + query.toString();
         let response: Response = await fetch(_url);
-        let antwort: ServerAntwort = await response.json();
+        let antwort: ServerAntwort = <ServerAntwort> await response.json();
         console.log(antwort);
         let para: HTMLParagraphElement = document.createElement("p");
-
-        para.innerHTML = JSON.stringify(antwort);
+        let antwortString: string = JSON.stringify(antwort);
+        //para.innerHTML = "Vorname: " + antwort.fname + " , " + " Nachname: " + antwort.lname + " , " + " Adresse: " + antwort.adress + " , " + " Mail: " + antwort.mail; 
+        //BITTE LESEN : Ich habe versucht die Informationen aus dem JSON String herauszubekommen aber es zeigt mir bei den Atributen immer UNDEFINED aus. Wo liegt der Fehler???? In der Konsole werden meine Daten aber angezeigt??
+        para.innerHTML = antwortString;
         document.body.appendChild(para);
 
 
