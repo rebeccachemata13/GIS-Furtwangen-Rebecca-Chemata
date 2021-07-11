@@ -1,15 +1,10 @@
-namespace Prüfungsabgabe {
+ namespace Prüfungsabgabe {
 
     interface Bild {
         title: string;
         url: string;
     }
 
-    /*interface Admin {
-        name: string;
-        time: number;
-    }
-*/
     async function sendPictures(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
 
@@ -70,7 +65,6 @@ namespace Prüfungsabgabe {
     document.querySelector("#submit-picture").addEventListener("click", sendPictures);
     
     async function deleteimage(_b: Bild): Promise<void> {
-        //let formData: FormData = new FormData(document.forms[0]);
         let formData2: FormData = new FormData();
         formData2.append("url", _b.url);
         let _url: RequestInfo = "https://gis-sose-21.herokuapp.com";

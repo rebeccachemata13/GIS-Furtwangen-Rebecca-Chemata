@@ -14,26 +14,31 @@ var Prüfungsabgabe;
         let antwort = await response.json();
         console.log(antwort);
         let timeArray = [];
-        let timeArrayString = [];
         for (let j = 0; j < antwort.length; j++) {
             timeArray.push(parseInt(antwort[j].time));
         }
         timeArray.sort(function (_a, _b) { return _a - _b; });
         console.log(timeArray);
-        for (let k = 0; k < timeArray.length; k++) {
-            timeArrayString[k] = timeArray[k].toString();
-        }
         let tabelle = document.getElementById("highscore-table");
-        for (let i = 0; i < timeArrayString.length; i++) {
+        for (let i = 0; i < timeArray.length; i++) {
             let reihe = document.createElement("tr");
             let nameElement = document.createElement("td");
             nameElement.innerHTML = antwort[i].name;
             let timeElement = document.createElement("td");
-            timeElement.innerHTML = timeArrayString[i];
+            timeElement.innerHTML = millitoMin(timeArray[i]);
             reihe.appendChild(nameElement);
             reihe.appendChild(timeElement);
             tabelle.appendChild(reihe);
         }
+    }
+    function millitoMin(_millisekunden) {
+        let millisekunden = _millisekunden % 1000;
+        let sekunden = Math.floor(_millisekunden / 1000) % 60;
+        let minuten = Math.floor(_millisekunden / 60000) % 60;
+        minuten = minuten < 10 ? "0" + minuten : minuten;
+        sekunden = sekunden < 10 ? "0" + sekunden : sekunden;
+        millisekunden = (millisekunden + "000").slice(0, 3);
+        return minuten + ":" + sekunden + ":" + millisekunden;
     }
     printScoreTable();
 })(Prüfungsabgabe || (Prüfungsabgabe = {}));

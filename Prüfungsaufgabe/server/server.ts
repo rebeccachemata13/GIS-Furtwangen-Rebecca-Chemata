@@ -44,7 +44,7 @@ export namespace Prüfungsabgabe {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let pathname: string = <string>url.pathname;
             let bildBeispiel: Bild = { title: url.query.title + "", url: url.query.url + "" };
-            //let gamerBeispiel: Gamer = { name: url.query.string + "", time: url.query.time + "" };
+            let gamerBeispiel: Gamer = { name: url.query.string + "", time: url.query.time + "" };
 
             if (pathname == "/sendBild") {
                 let jsonString: string = JSON.stringify(url.query);
@@ -69,6 +69,19 @@ export namespace Prüfungsabgabe {
                 _response.write(JSON.stringify(await pasteDataGamer()));
 
             }
+            else if (pathname == "/sendGamer") {
+                let jsonString: string = JSON.stringify(url.query);
+
+                console.log(jsonString);
+                console.log(gamerBeispiel);
+
+                console.log("Database connected");
+                sendGamer(gamerBeispiel);
+
+                _response.write(JSON.stringify(gamerBeispiel));
+
+            }
+            _response.end();
             async function sendData(_b: Bild): Promise<void> {
                 let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
                 let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
@@ -78,15 +91,15 @@ export namespace Prüfungsabgabe {
                 bilder.insertOne(_b);
 
             }
-            //async function sendGamer(_g: Gamer): Promise<void> {
-                //let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
-                //let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
-                //await mongoClient.connect();
-                //console.log("Database send Gamer");
-                //let bilder: Mongo.Collection = mongoClient.db("Memory").collection("Gamer");
-                //bilder.insertOne(_g);
+            async function sendGamer(_g: Gamer): Promise<void> {
+                let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+                let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+                await mongoClient.connect();
+                console.log("Database send Gamer");
+                let gamer: Mongo.Collection = mongoClient.db("Memory").collection("Gamer");
+                gamer.insertOne(_g);
 
-           // }
+            }
             async function pasteData(): Promise<Bild[]> {
                 let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
                 let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);

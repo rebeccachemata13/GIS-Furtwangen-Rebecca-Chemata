@@ -1,11 +1,6 @@
 "use strict";
 var Prüfungsabgabe;
 (function (Prüfungsabgabe) {
-    /*interface Admin {
-        name: string;
-        time: number;
-    }
-*/
     async function sendPictures() {
         let formData = new FormData(document.forms[0]);
         let _url = "https://gis-sose-21.herokuapp.com";
@@ -57,7 +52,6 @@ var Prüfungsabgabe;
     printAdminImages();
     document.querySelector("#submit-picture").addEventListener("click", sendPictures);
     async function deleteimage(_b) {
-        //let formData: FormData = new FormData(document.forms[0]);
         let formData2 = new FormData();
         formData2.append("url", _b.url);
         let _url = "https://gis-sose-21.herokuapp.com";

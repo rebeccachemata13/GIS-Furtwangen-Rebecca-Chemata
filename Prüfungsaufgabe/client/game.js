@@ -20,19 +20,22 @@ var Prüfungsabgabe;
         setTimeout(hochzaehlen, 1);
     }
     function aktualisiereAnzeige() {
-        let millisekunden = gestoppteZeit % 1000;
-        let sekunden = Math.floor(gestoppteZeit / 1000) % 60;
-        let minuten = Math.floor(gestoppteZeit / 60000) % 60;
-        minuten = minuten < 10 ? "0" + minuten : minuten;
-        sekunden = sekunden < 10 ? "0" + sekunden : sekunden;
-        millisekunden = (millisekunden + "000").slice(0, 3);
-        meinTimer.innerHTML = minuten + ":" + sekunden + ":" + millisekunden;
+        meinTimer.innerHTML = millitoMin2(gestoppteZeit);
     }
     function stoppeZeit() {
         pausiert = true;
         sessionStorage.setItem("gestoppte Zeit", gestoppteZeit.toString());
         window.open("profile.html");
         window.close();
+    }
+    function millitoMin2(_millisekunden) {
+        let millisekunden = _millisekunden % 1000;
+        let sekunden = Math.floor(_millisekunden / 1000) % 60;
+        let minuten = Math.floor(_millisekunden / 60000) % 60;
+        minuten = minuten < 10 ? "0" + minuten : minuten;
+        sekunden = sekunden < 10 ? "0" + sekunden : sekunden;
+        millisekunden = (millisekunden + "000").slice(0, 3);
+        return minuten + ":" + sekunden + ":" + millisekunden;
     }
     async function printMemoryImages() {
         let formData = new FormData(document.forms[0]);
@@ -66,58 +69,65 @@ var Prüfungsabgabe;
         console.log(bilderArray);
         for (let k = 0; k < bilderArray.length; k++) {
             let memorykartenDiv = document.createElement("div");
-            memorykartenDiv.addEventListener("click", speicherUrl);
+            let defaultPictureDiv = document.createElement("div");
             memorykartenDiv.classList.add("einzelnes-div-für-memorykarte");
             let imageMemory = document.createElement("img");
             let defaultPicture = document.createElement("img");
             imageMemory.src = bilderArray[k].url;
-            imageMemory.id = bilderArray[k].title;
-            defaultPicture.src = "images/rotes_fragezeichen.jpg";
-            defaultPicture.classList.add("default-picture");
-            imageMemory.classList.add("memory-bild");
-            //memorykartenDiv.appendChild(defaultPicture);
+            imageMemory.id = bilderArray[k].title + k + "front";
+            imageMemory.classList.add("memory-bild-front");
+            defaultPicture.src = "https://i.pinimg.com/474x/87/20/0b/87200b400e6d74b8e17a22f93e17f95e.jpg";
+            defaultPicture.classList.add("default-picture-back");
+            defaultPicture.id = bilderArray[k].title + k;
+            defaultPicture.addEventListener("click", speicherUrl);
+            defaultPictureDiv.appendChild(defaultPicture);
             memorykartenDiv.appendChild(imageMemory);
             memoryDiv.appendChild(memorykartenDiv);
+            memoryDiv.append(defaultPictureDiv);
         }
     }
     printMemoryImages();
     hochzaehlen();
     function speicherUrl(_event) {
-        //flipcard()
+        let target = _event.target;
+        console.log(target.id);
+        target.style.opacity = "0";
         counter++;
         console.log(counter);
-        let target = _event.target;
-        kardArray.push(target);
+        kardArray.push(target.id);
         console.log(kardArray);
         if (counter == 2) {
+            target.style.opacity = "0";
             counter = 0;
             consequenz(kardArray);
         }
     }
     function consequenz(_b) {
         console.log(_b);
-        if (_b[0].id == _b[1].id) {
+        //console.log(<HTMLImageElement>_b[0].previousElementSibling.src);
+        let pictureUnder = document.getElementById(_b[0] + "front");
+        let pictureUnder2 = document.getElementById(_b[1] + "front");
+        let pictureUpper = document.getElementById(_b[0]);
+        let pictureUpper2 = document.getElementById(_b[1]);
+        console.log(pictureUnder);
+        console.log(pictureUnder2);
+        if (pictureUnder.src == pictureUnder2.src) {
             paarCounter++;
             console.log(paarCounter);
-            for (let i = 0; i < _b.length; i++) {
-                _b[1].style.opacity = "0";
-                _b[0].style.opacity = "0";
-                _b[1].addEventListener("click", speicherUrl);
-                _b[0].addEventListener("click", speicherUrl);
-                if (paarCounter == 5) {
-                    console.log("Keine Paare mehr");
-                    stoppeZeit();
-                }
-                kardArray = [];
-                return;
-            }
+            pictureUnder.style.opacity = "0";
+            pictureUnder2.style.opacity = "0";
+            kardArray = [];
         }
-        console.log("Kein Paar");
-        kardArray = [];
-        if (paarCounter == 5) {
+        else {
+            console.log("Kein Paar");
+            pictureUpper.style.opacity = "1";
+            pictureUpper2.style.opacity = "1";
+            kardArray = [];
+        }
+        if (paarCounter == 8) {
             console.log("Keine Paare mehr");
+            stoppeZeit();
         }
-        //else flipcard()
     }
 })(Prüfungsabgabe || (Prüfungsabgabe = {}));
 //# sourceMappingURL=game.js.map
