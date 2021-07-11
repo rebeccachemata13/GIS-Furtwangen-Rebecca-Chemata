@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id=adminseite>Adminseite</title>
+    <script src="admin.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/marvel-logo2.jpg" alt="Marvel-Logo" width= 200px>
+       
+    </header>
+    <nav>
+        <a href="spieleseite.html">Game</a>
+        <a class="active" href="adminseite.html">Admin</a>
+        <a href="scoreseite.html">Score</a>
+    </nav>
+    <main>
+        <form>
+            <label for="title">Titel/Name des Bildes:</label><br>
+            <input type="text" id="title" name="title"><br>
+            <label for="url">URL des Bildes (bitte als Link angeben):</label><br>
+            <input type="text" id="url" name="url"><br><br>
+            <button id= "submit-picture">Submit</button>
+        </form>
+        <div id= "admin-pictures"></div>
+    </main>
+
+    <footer>
+        
+    </footer>
+</body>
+
+</html>

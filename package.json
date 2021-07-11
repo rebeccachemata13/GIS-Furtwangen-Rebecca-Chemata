@@ -12,7 +12,7 @@
     "@types/node": "^15.6.2"
   },
   "scripts": {
-    "start": "node Abgabe3.4/server/server.js"
+    "start": "node Prüfungsaufgabe/server.js"
   },
   "repository": {
     "type": "git",

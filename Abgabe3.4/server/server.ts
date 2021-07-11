@@ -9,8 +9,8 @@ import * as Mongo from "mongodb";
 
 export namespace P_3_4 {
 
-    let _url: string = "mongodb+srv://rebecca:re12345@rebeccachemata.tjtcc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-    //let _url: string = "mongodb://localhost:27017";
+    //let _url: string = "mongodb+srv://rebecca:re12345@rebeccachemata.tjtcc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    let _url: string = "mongodb://localhost:27017";
    
 
     interface ServerAntwort {

@@ -14,8 +14,8 @@ namespace P_3_4Server {
     async function print(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
 
-        let _url: RequestInfo = "https://gis-sose-21.herokuapp.com";
-        //let _url: RequestInfo = "http://localhost:8100";
+        //let _url: RequestInfo = "https://gis-sose-21.herokuapp.com";
+        let _url: RequestInfo = "http://localhost:8100";
 
         _url = _url + "/paste";
         console.log(_url);
@@ -25,10 +25,10 @@ namespace P_3_4Server {
         let antwort: ServerAntwort = <ServerAntwort> await response.json();
         console.log(antwort);
         let para: HTMLParagraphElement = document.createElement("p");
-        let antwortString: string = JSON.stringify(antwort);
-        //para.innerHTML = "Vorname: " + antwort.fname + " , " + " Nachname: " + antwort.lname + " , " + " Adresse: " + antwort.adress + " , " + " Mail: " + antwort.mail; 
+        //let antwortString: string = JSON.stringify(antwort);
+        para.innerHTML = "Vorname: " + antwort.fname + " , " + " Nachname: " + antwort.lname + " , " + " Adresse: " + antwort.adress + " , " + " Mail: " + antwort.mail; 
         //BITTE LESEN : Ich habe versucht die Informationen aus dem JSON String herauszubekommen aber es zeigt mir bei den Atributen immer UNDEFINED aus. Wo liegt der Fehler???? In der Konsole werden meine Daten aber angezeigt??
-        para.innerHTML = antwortString;
+        //para.innerHTML = antwortString;
         document.body.appendChild(para);
 
 
@@ -37,8 +37,8 @@ namespace P_3_4Server {
     async function send(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
 
-        let _url: RequestInfo = "https://gis-sose-21.herokuapp.com";
-        //let _url: RequestInfo = "http://localhost:8100";
+        //let _url: RequestInfo = "https://gis-sose-21.herokuapp.com";
+        let _url: RequestInfo = "http://localhost:8100";
 
         _url = _url + "/send";
 

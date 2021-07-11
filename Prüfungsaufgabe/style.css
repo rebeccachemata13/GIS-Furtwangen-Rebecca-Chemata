@@ -1,0 +1,143 @@
+body{
+    background-image: url("images/background.jpg");
+    text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    
+}
+
+#navigation-div{
+    margin-top: 50px;
+    top:0;
+    height: 2px;
+    
+    
+    
+}
+nav a {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    border-right: 1px solid white;
+    overflow: hidden;
+    background-color: rgba(214, 4, 32, 0.433);
+    border-radius: 100px;
+    position: sticky;
+    top:0;
+    padding:20px;
+    float: right;
+}
+
+nav a:hover:not(.active){
+    background-color: rgba(17, 17, 17, 0.563) ;
+}
+.active{
+    background-color: rgba(255, 255, 255, 0.666);
+    color: rgba(181, 3, 27, 0.905);
+}
+img {
+    border-radius:100px;
+}
+table,th,td{
+   margin:auto;
+    
+}
+.admin-bild{
+    width: 150px;
+    height: 270px ;
+    border-radius: 20px;
+    border: solid rgb(8, 2, 24);
+}
+#admin-pictures{
+display: flex;
+flex-direction: row;
+justify-content:space-between;
+
+}
+.one-image-div{
+    padding:10px;
+    
+}
+button {
+    background-color: rgba(214, 4, 32, 0.433);
+    color:rgba(255, 255, 255, 0.699);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    transition: width 0.5s;
+    border-radius: 10px;
+    
+}
+button:hover {
+    background-color:rgba(214, 4, 32, 0.219); 
+    color: rgba(255, 255, 255, 0.699);
+    width: 130px;
+  }
+
+  input[type = text]{
+    background-color: #e6cece2e;
+    color: white;
+    border-color: rgba(214, 4, 32, 0.433);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 30%;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type=text]:focus {
+    border: 3px solid rebeccapurple(102, 51, 153, 0.2);
+}
+form{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;   
+}
+#memory-div{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;  
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    
+}
+.memory-bild{
+    width: 135px;
+    height: 230px;
+    border-radius: 0;
+    padding: 20px;
+    
+}
+#timer-para{
+    margin-top: 100px;
+    font-size: xx-large;
+}
+.default-picture{
+    width:  100%;
+    height: 100%;
+    
+    border-radius: 0;
+    padding: 20px;
+}
+
+.einzelnes-div-für-memorykarte{
+    width: 135px;
+    height: 230px;
+    padding: 20px; 
+    display: flex;
+    justify-content: center;   
+}
+table, td,tr{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right:auto;
+    font-size: x-large;
+
+    
+}

@@ -6,7 +6,8 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var P_3_4;
 (function (P_3_4) {
-    let _url = "mongodb+srv://rebecca:re12345@rebeccachemata.tjtcc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    //let _url: string = "mongodb+srv://rebecca:re12345@rebeccachemata.tjtcc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    let _url = "mongodb://localhost:27017";
     console.log("Starting server"); //Starting server wird ausgegeben
     let port = Number(process.env.PORT);
     if (!port) //Port == "Hafen"
